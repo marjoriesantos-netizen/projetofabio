@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="NFT card list component — Frontend Mentor challenge phase 1.1"
+      content="NFT card list with header — Frontend Mentor challenge phase 1.2"
     />
-    <title>NFT Card List | Phase 1.1</title>
+    <title>Aura NFT | Phase 1.2</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,35 +23,101 @@
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/card.css" />
     <link rel="stylesheet" href="css/cardlist.css" />
+    <link rel="stylesheet" href="css/header.css" />
   </head>
 
   <body>
     <div class="page">
+      <!-- ========== HEADER ========== -->
+      <header class="header" data-header>
+        <div class="container header__container">
+          <a href="#" class="header__logo">
+            <img
+              class="header__logo-img"
+              src="assets/logo/logo-full.svg"
+              alt="Aura — NFT marketplace logo"
+            />
+          </a>
+
+          <nav class="header__nav" aria-label="Primary navigation">
+            <a href="#collection" class="header__nav-link">Collection</a>
+            <a href="#drops" class="header__nav-link">Drops</a>
+            <a href="#creators" class="header__nav-link">Creators</a>
+            <a href="#about" class="header__nav-link">About</a>
+          </nav>
+
+          <a href="#collection" class="header__cta header__cta--desktop">
+            <span class="header__cta-dot"></span>
+            Explore Collection
+          </a>
+
+          <button
+            class="header__toggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+            data-header-toggle
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile navigation -->
+        <div class="header__mobile" id="mobile-nav" data-header-mobile>
+          <a href="#collection" class="header__mobile-link">Collection</a>
+          <a href="#drops" class="header__mobile-link">Drops</a>
+          <a href="#creators" class="header__mobile-link">Creators</a>
+          <a href="#about" class="header__mobile-link">About</a>
+          <a href="#collection" class="header__cta">
+            <span class="header__cta-dot"></span>
+            Explore Collection
+          </a>
+        </div>
+      </header>
+
       <main class="page__main">
         <div class="container">
-          <div class="cardlist-intro">
+          <!-- Intro -->
+          <section class="cardlist-intro" id="collection">
             <div>
               <h1 class="section-heading">Featured <span>Collection</span></h1>
               <p class="section-subheading">
-                Seven unique drops minted on the Ethereum network. Every card is
-                built from the same component, driven by a single data file.
+                Seven unique drops curated for this challenge. Built with a single
+                reusable card component, data-driven rendering and smooth entrance
+                animations.
               </p>
             </div>
 
             <p class="cardlist-intro__count">
               <strong id="cardlist-count">0</strong> unique drops
             </p>
-          </div>
+          </section>
 
-          <div class="cardlist-section">
-            <!-- Cards are injected by js/main.js from js/data.js -->
+          <!-- Card list -->
+          <section class="cardlist-section" id="drops" aria-label="NFT card list">
             <div class="cardlist" id="cardlist"></div>
-          </div>
+          </section>
+
+          <!-- About section -->
+          <section id="about" class="cardlist-intro" style="margin-top: var(--space-xxl)">
+            <div>
+              <h2 class="section-heading">Built for <span>learning</span></h2>
+              <p class="section-subheading">
+                Phase 1.2 adds a project logo (generated with AI), a responsive
+                header that blends with the dark theme, and a complete README to
+                document the tech stack, screenshots, live demo and author.
+              </p>
+            </div>
+          </section>
         </div>
       </main>
     </div>
 
     <script src="js/data.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/header.js"></script>
   </body>
 </html>
