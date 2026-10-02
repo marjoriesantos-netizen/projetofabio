@@ -1,0 +1,63 @@
+/* ============================================
+   cardlist.css — responsive grid that holds the NFT cards
+   ============================================ */
+
+.cardlist-section {
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
+.cardlist {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: var(--space-lg);
+}
+
+.cardlist .nft-card {
+  width: 100%;
+  max-width: none;
+  /* keep the card invisible until its staggered entrance animation runs */
+  animation-fill-mode: both;
+}
+
+/* ---------- Intro block ---------- */
+.cardlist-intro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-md);
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
+.cardlist-intro__count {
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  color: var(--text-muted-color);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.cardlist-intro__count strong {
+  color: var(--accent-color);
+  font-weight: var(--font-semibold);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  .cardlist {
+    gap: var(--space-md);
+  }
+
+  .cardlist-intro {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 380px) {
+  .cardlist {
+    grid-template-columns: 1fr;
+  }
+}

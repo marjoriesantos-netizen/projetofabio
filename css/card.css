@@ -24,6 +24,50 @@
     0 12px 24px -8px rgba(0, 0, 0, 0.6);
 }
 
+/* Rotating conic gradient border on hover */
+@property --card-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.nft-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  padding: 1px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: conic-gradient(
+    from var(--card-angle),
+    transparent 0%,
+    rgba(0, 255, 240, 0.9) 12%,
+    transparent 28%,
+    transparent 60%,
+    rgba(255, 255, 255, 0.5) 74%,
+    transparent 90%
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  animation: card-angle-spin 4s linear infinite;
+  transition: opacity var(--transition-base);
+}
+
+.nft-card:hover::after,
+.nft-card:focus-within::after {
+  opacity: 1;
+}
+
+@keyframes card-angle-spin {
+  to {
+    --card-angle: 360deg;
+  }
+}
+
 /* ---------- Media ---------- */
 .nft-card__media {
   position: relative;
@@ -41,6 +85,62 @@
 .nft-card:focus-within .nft-card__image {
   transform: scale(1.07);
   filter: saturate(1.2) brightness(0.72);
+}
+
+/* Floating aura behind the artwork — constant subtle movement */
+.nft-card__aura {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 50% 60%,
+    rgba(0, 255, 240, 0.55) 0%,
+    rgba(0, 255, 240, 0) 65%
+  );
+  mix-blend-mode: screen;
+  animation: aura-float 7s ease-in-out infinite;
+}
+
+.nft-card:nth-child(even) .nft-card__aura {
+  animation-delay: -3.5s;
+}
+
+/* Shimmer sweep across the artwork on hover */
+.nft-card__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 25%,
+    rgba(255, 255, 255, 0.22) 50%,
+    transparent 75%
+  );
+  transform: translateX(-120%);
+}
+
+.nft-card:hover .nft-card__media::after,
+.nft-card:focus-within .nft-card__media::after {
+  animation: shimmer 900ms ease;
+}
+
+@keyframes aura-float {
+  0%,
+  100% {
+    opacity: 0.16;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    opacity: 0.42;
+    transform: translate3d(0, -10px, 0) scale(1.08);
+  }
+}
+
+@keyframes shimmer {
+  to {
+    transform: translateX(120%);
+  }
 }
 
 /* Cyan overlay that fades in on hover */
@@ -105,6 +205,15 @@
 .nft-card__badge svg {
   width: 1rem;
   height: 1rem;
+}
+
+.nft-card__collection {
+  margin-bottom: var(--space-xs);
+  color: var(--accent-color);
+  font-size: 0.75rem;
+  font-weight: var(--font-medium);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .nft-card__title {

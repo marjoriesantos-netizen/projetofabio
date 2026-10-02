@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="NFT preview card component — Frontend Mentor challenge phase 1.0"
+      content="NFT card list component — Frontend Mentor challenge phase 1.1"
     />
-    <title>NFT Preview Card | Phase 1.0</title>
+    <title>NFT Card List | Phase 1.1</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,83 +15,43 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
 
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/card.css" />
+    <link rel="stylesheet" href="css/cardlist.css" />
   </head>
 
   <body>
     <div class="page">
       <main class="page__main">
         <div class="container">
-          <div class="card-stage">
-            <!-- ========== NFT PREVIEW CARD ========== -->
-            <article class="nft-card">
-              <div class="nft-card__media">
-                <img
-                  class="nft-card__image"
-                  src="assets/images/nft-doodle-321.svg"
-                  alt="Abstract doodle artwork titled Doodle #321"
-                />
-                <div class="nft-card__overlay" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                    <path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12Z" />
-                    <circle cx="12" cy="12" r="3" />
-                  </svg>
-                </div>
-              </div>
+          <div class="cardlist-intro">
+            <div>
+              <h1 class="section-heading">Featured <span>Collection</span></h1>
+              <p class="section-subheading">
+                Seven unique drops minted on the Ethereum network. Every card is
+                built from the same component, driven by a single data file.
+              </p>
+            </div>
 
-              <div class="nft-card__body">
-                <ul class="nft-card__badges">
-                  <li class="nft-card__badge" title="Ethereum">
-                    <svg viewBox="0 0 256 417" aria-hidden="true">
-                      <path
-                        fill="currentColor"
-                        d="M127.9611 0l-2.795 9.5v275.667l2.795 2.79 127.962-75.638zM127.962 0L0 212.32l127.962 75.639V154.158z"
-                      />
-                      <path
-                        fill="currentColor"
-                        opacity=".55"
-                        d="M127.9611 312.187l-1.575 1.92v98.199l1.575 4.601L256 236.587zM0 236.587l127.9611 180.32v-104.72z"
-                      />
-                    </svg>
-                  </li>
-                  <li class="nft-card__badge nft-card__badge--diamond" title="Rarity">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
-                      <path d="M12 2 3 7l9 15 9-15-9-5Z" />
-                      <path d="M3 7h18M9 7l3 15 3-15" />
-                    </svg>
-                  </li>
-                </ul>
+            <p class="cardlist-intro__count">
+              <strong id="cardlist-count">0</strong> unique drops
+            </p>
+          </div>
 
-                <h2 class="nft-card__title">Doodle #321</h2>
-
-                <p class="nft-card__description">
-                  A combination of air and water makes this a great logo for a sports
-                  team that needs to inspire fans to go out and play.
-                </p>
-
-                <footer class="nft-card__footer">
-                  <div class="nft-card__owner">
-                    <img
-                      class="nft-card__avatar"
-                      src="assets/images/avatar-1.svg"
-                      alt="Owner avatar"
-                    />
-                    <span class="nft-card__owner-name">Owner name</span>
-                  </div>
-
-                  <div class="nft-card__bid">
-                    <span class="nft-card__price">0.59 ETH</span>
-                    <span class="nft-card__currency">ETH</span>
-                  </div>
-                </footer>
-              </div>
-            </article>
-            <!-- ===================================== -->
+          <div class="cardlist-section">
+            <!-- Cards are injected by js/main.js from js/data.js -->
+            <div class="cardlist" id="cardlist"></div>
           </div>
         </div>
       </main>
     </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
