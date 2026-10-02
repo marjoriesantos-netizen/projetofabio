@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 600" width="700" height="600" role="img">
+  <defs>
+    <linearGradient id="bg-doodle" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00c2b2" />
+      <stop offset="100%" stop-color="#0a3d4d" />
+    </linearGradient>
+    <filter id="soft-doodle" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="70" />
+    </filter>
+    <filter id="grain-doodle" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch" />
+      <feColorMatrix type="saturate" values="0" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="600" fill="#04202a" />
+  <g filter="url(#soft-doodle)" opacity="0.95">
+      <circle cx="497" cy="324" r="131" fill="#00fff0" />
+      <circle cx="152" cy="276" r="137" fill="#0affd1" />
+      <circle cx="431" cy="318" r="189" fill="#026aa5" />
+      <circle cx="286" cy="265" r="140" fill="#7cffe6" />
+  </g>
+  
+  <g fill="none" stroke="#e8fffb" stroke-linecap="round" opacity="0.5">
+    <path d="M-20 420 Q 120 350 260 410 T 540 400 T 760 380" stroke-width="3" />
+    <path d="M-20 470 Q 140 405 280 460 T 560 455 T 760 435" stroke-width="2" />
+    <path d="M-20 516 Q 150 460 300 512 T 600 505" stroke-width="1.5" />
+  </g>
+  <g fill="none" stroke="#e8fffb" stroke-linecap="round" opacity="0.35">
+    <path d="M-20 250 Q 150 190 300 245 T 620 235 T 760 215" stroke-width="2" />
+  </g>
+  <rect width="700" height="600" fill="#00fff0" opacity="0.06" />
+  <rect width="700" height="600" filter="url(#grain-doodle)" opacity="0.14" style="mix-blend-mode:overlay" />
+</svg>

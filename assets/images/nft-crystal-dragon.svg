@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 600" width="700" height="600" role="img">
+  <defs>
+    <linearGradient id="bg-crystal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#12b981" />
+      <stop offset="100%" stop-color="#04372a" />
+    </linearGradient>
+    <filter id="soft-crystal" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="70" />
+    </filter>
+    <filter id="grain-crystal" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch" />
+      <feColorMatrix type="saturate" values="0" />
+    </filter>
+  </defs>
+
+  <rect width="700" height="600" fill="#021a12" />
+  <g filter="url(#soft-crystal)" opacity="0.95">
+      <circle cx="372" cy="423" r="216" fill="#10b981" />
+      <circle cx="309" cy="170" r="179" fill="#22d3ee" />
+      <circle cx="211" cy="296" r="207" fill="#84cc16" />
+      <circle cx="187" cy="224" r="215" fill="#065f46" />
+  </g>
+  
+  <g opacity="0.4" stroke="#d9fff6" stroke-width="1" fill="none">
+    <path d="M120 470 L250 210 L330 470 Z" />
+    <path d="M330 470 L430 140 L540 470 Z" />
+    <path d="M470 470 L590 260 L660 470 Z" />
+  </g>
+  <rect width="700" height="600" fill="#a7f3d0" opacity="0.06" />
+  <rect width="700" height="600" filter="url(#grain-crystal)" opacity="0.14" style="mix-blend-mode:overlay" />
+</svg>
