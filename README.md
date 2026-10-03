@@ -21,17 +21,31 @@ A three-phase NFT preview card challenge built with **HTML, CSS and vanilla Java
 
 > **GitHub Pages:** [View Live Demo](https://marjoriesantos-netizen.github.io/projetofabio/)
 
-*(The link will be active once GitHub Pages is enabled on the `projetofabio` repository.)*
+Live demo is served from the `main` branch root via GitHub Pages.
 
 ## Screenshots
 
-| Phase | Preview |
-|---|---|
-| **Phase 1.0 — Card NFT** | ![NFT Card](assets/images/nft-doodle-321.svg) |
-| **Phase 1.1 — Card List** | ![Card List Grid](assets/images/nft-neon-city-88.svg) |
-| **Phase 1.2 — Header + Logo** | ![Aura Logo](assets/logo/logo-full.svg) |
+### Desktop
 
-> **Tip:** Replace these SVG placeholders with real screenshots (PNG/JPG) after deploying to GitHub Pages for a cleaner README.
+![Desktop view](docs/screenshots/desktop.png)
+
+### Mobile
+
+<p align="center">
+  <img src="docs/screenshots/mobile.png" width="300" alt="Mobile view">
+</p>
+
+### Card hover effect
+
+Hovering a card lifts it, zooms the artwork, dims it behind a cyan overlay and spins a conic gradient border.
+
+![Card hover effect](docs/screenshots/card-hover.png)
+
+### Logo
+
+![Aura logo](assets/logo/logo-full.svg)
+
+> **Note:** Screenshots live in [`docs/screenshots/`](docs/screenshots/). NFT artwork shown in the cards are SVG placeholders — replace them with your own [Leonardo.ai](https://app.leonardo.ai/) generations.
 
 ## Technologies Used
 
